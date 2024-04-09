@@ -21,6 +21,9 @@ INCLUDE=Makefile libft.h
 LIB=ar rcs
 RM=rm -f
 
+GREEN=\033[0;32m
+NONE=\033[0m
+
 SRC=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
 	ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
@@ -28,35 +31,29 @@ SRC=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c
 	ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 
-BONUS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-
 OBJ=$(SRC:.c=.o)
-OBJ_BONUS=$(BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): printf $(OBJ) $(INCLUDE)
-	$(LIB) $(NAME) $(OBJ)
+	@$(LIB) $(NAME) $(OBJ)
+	@echo "\n$(GREEN)Create $(NAME) ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 printf:
-	$(PRINTF_MAKE)
+	@echo "\nCompilando ft_printf"
+	@$(PRINTF_MAKE)
 
-bonus: .bonus
-
-.bonus: $(BONUS) $(OBJ_BONUS) $(INCLUDE)
-	$(LIB) $(NAME) $(OBJ) $(OBJ_BONUS)
-	@touch $@
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
+	$(PRINTF_MAKE) clean
 
 fclean: clean
-	$(RM) $(NAME) .bonus
+	$(RM) $(NAME)
+	$(PRINTF_MAKE) fclean
 
 re:	fclean all
 
-.PHONY: all clean fclean re bonus printf
+.PHONY: all clean fclean re printf

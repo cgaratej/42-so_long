@@ -6,11 +6,19 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 11:06:32 by cgaratej          #+#    #+#              #
-#    Updated: 2024/02/05 15:25:15 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/09 15:11:03 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
+CC=cc
+CFLGS=-Wall -Wextra -Werror
+LIB=ar rcs
+INCLUDE=Makefile ft_printf.h
+RM=rm -f
+
+GREEN=\033[0;32m
+NONE=\033[0m
 
 SRC=ft_printf.c \
 	ft_putchar.c \
@@ -21,28 +29,16 @@ SRC=ft_printf.c \
 	ft_puthex.c \
 	ft_putmem.c
 
-GREEN=\033[0;32m
-
 OBJ=$(SRC:.c=.o)
-
-CC=cc
-
-CFLGS=-Wall -Wextra -Werror
-
-LIB=ar rcs
-
-INCLUDE=Makefile ft_printf.h
-
-RM=rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(LIB) $(NAME) $(OBJ)
-	@echo "\n$(GREEN)Create $(NAME) ✔\n"
+	@echo "\n$(GREEN)Create $(NAME) ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
-	$(CC) $(CFLGS) -o $@ -c $<
+	@$(CC) $(CFLGS) -o $@ -c $<
 
 clean:
 	$(RM) $(OBJ)
