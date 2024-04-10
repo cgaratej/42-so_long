@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/04/10 10:55:48 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/10 11:16:33 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ RM = rm -f
 OBJ_DIR= obj/
 
 GREEN=\033[0;32m
+LGREEN=\033[1;92m
 ORANGE=\033[33m
 RED = \033[1;91m
 NONE=\033[0m
@@ -39,7 +40,7 @@ $(NAME): libft minilib $(OBJ) $(INCLUDE)
 
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLAGS) -Imlx -c $< -o $@
-	@echo "$(GREEN)File $< compiled ✔$(NONE)"
+	@echo "$(LGREEN)File $< compiled ✔$(NONE)"
 
 libft:
 	@echo "$(ORANGE)\nCompilando libft$(NONE)"

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+int	ft_strlen_pf(const char *str)
 {
 	int	i;
 

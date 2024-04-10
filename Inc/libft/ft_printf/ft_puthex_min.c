@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:41:32 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/02/04 20:04:40 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:57:09 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_hex_long(char *base, long n, int len)
 {
 	unsigned long	b;
 
-	b = ft_strlen(base);
+	b = ft_strlen_pf(base);
 	if (n >= b)
 	{
 		len = ft_hex_long(base, n / b, len);
@@ -39,7 +39,7 @@ static int	ft_hex_uns(char *base, unsigned int n, int len)
 {
 	unsigned int	b;
 
-	b = ft_strlen(base);
+	b = ft_strlen_pf(base);
 	if (n >= b)
 	{
 		len = ft_hex_uns(base, n / b, len);
