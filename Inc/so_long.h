@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/10 12:19:55 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:38:05 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define WINDOW_WIDTH 600
-# define WINDOW_HEIGHT 300
+# define WINDOW_WIDTH 800
+# define WINDOW_HEIGHT 600
 # define MLX_ERROR 1
 
 # include <fcntl.h>
