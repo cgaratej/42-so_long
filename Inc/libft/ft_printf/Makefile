@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 11:06:32 by cgaratej          #+#    #+#              #
-#    Updated: 2024/04/09 15:11:03 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/10 10:50:42 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ INCLUDE=Makefile ft_printf.h
 RM=rm -f
 
 GREEN=\033[0;32m
+LGREEN=\033[1;92m
+RED = \033[1;91m
 NONE=\033[0m
 
 SRC=ft_printf.c \
@@ -35,17 +37,19 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(LIB) $(NAME) $(OBJ)
-	@echo "\n$(GREEN)Create $(NAME) ✔\n$(NONE)"
+	@echo "\n$(LGREEN)Create $(NAME) ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLGS) -o $@ -c $<
+	@echo "$(GREEN)File $< compiled ✔$(NONE)"
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
-
+	@$(RM) $(NAME)
+	@echo "$(RED)$(NAME) Deleted$(NONE)"
+	
 re: fclean all
 
 .PHONY=all clean fclean re

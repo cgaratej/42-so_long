@@ -21,7 +21,10 @@ INCLUDE=Makefile libft.h
 LIB=ar rcs
 RM=rm -f
 
-GREEN=\033[0;32m
+GREEN=\033[32m
+LGREEN=\033[1;92m
+ORANGE=\033[33m
+RED = \033[1;91m
 NONE=\033[0m
 
 SRC=ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
@@ -37,22 +40,24 @@ all: $(NAME)
 
 $(NAME): printf $(OBJ) $(INCLUDE)
 	@$(LIB) $(NAME) $(OBJ)
-	@echo "\n$(GREEN)Create $(NAME) ✔\n$(NONE)"
+	@echo "\n$(LGREEN)Create $(NAME) ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLAGS) -o $@ -c $<
+	@echo "$(GREEN)File $< compiled ✔$(NONE)"
 
 printf:
-	@echo "\nCompilando ft_printf"
+	@echo "$(ORANGE)\nCompilando ft_printf$(NONE)"
 	@$(PRINTF_MAKE)
 
 clean:
-	$(RM) $(OBJ) $(OBJ_BONUS)
-	$(PRINTF_MAKE) clean
+	@$(RM) $(OBJ) $(OBJ_BONUS)
+	@$(PRINTF_MAKE) clean
 
 fclean: clean
-	$(RM) $(NAME)
-	$(PRINTF_MAKE) fclean
+	@$(RM) $(NAME)
+	@$(PRINTF_MAKE) fclean
+	@echo "$(RED)$(NAME) Deleted$(NONE)"
 
 re:	fclean all
 
