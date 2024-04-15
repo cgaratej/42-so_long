@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   path.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/15 17:14:41 by cgaratej         ###   ########.fr       */
+/*   Created: 2024/04/15 16:41:39 by cgaratej          #+#    #+#             */
+/*   Updated: 2024/04/15 16:52:56 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PATH_H
+# define PATH_H
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-
-# include <fcntl.h>
-# include <errno.h>
-# include "libft/ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include "../minilibx/mlx.h"
-# include "so_utils.h"
-# include "path.h"
-
-/*Window and Images*/
-t_win	new_window(int w, int h, char *str);
-t_img	new_sprite(void *mlx, char *path);
-void	set_images(t_game *game);
-
-/*Game over*/
+# define PATH_SPRITE "./assets/player/back.xpm"
+# define PATH_SPRITE_F "./assets/player/front.xpm"
+# define PATH_SPRITE_L "./assets/player/left.xpm"
+# define PATH_SPRITE_R "./assets/player/right.xpm"
+# define PATH_FLOOR "./assets/floor.xpm"
+# define PATH_TREE "./assets/tree.xpm"
 
 
 #endif

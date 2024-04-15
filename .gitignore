@@ -12,6 +12,8 @@
 # Temp files
 *.swp
 
+maps/
+
 # Debug files
 *.dSYM/
 

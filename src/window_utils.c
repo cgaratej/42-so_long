@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   window_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/15 17:14:41 by cgaratej         ###   ########.fr       */
+/*   Created: 2024/04/15 13:00:11 by cgaratej          #+#    #+#             */
+/*   Updated: 2024/04/15 13:21:34 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../inc/so_long.h"
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+t_win	new_window(int w, int h, char *str)
+{
+	void	*mlx_ptr;
 
-# include <fcntl.h>
-# include <errno.h>
-# include "libft/ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include "../minilibx/mlx.h"
-# include "so_utils.h"
-# include "path.h"
-
-/*Window and Images*/
-t_win	new_window(int w, int h, char *str);
-t_img	new_sprite(void *mlx, char *path);
-void	set_images(t_game *game);
-
-/*Game over*/
-
-
-#endif
+	mlx_ptr = mlx_init();
+	return ((t_win){mlx_ptr, mlx_new_window(mlx_ptr, w, h, str), w, h});
+}
