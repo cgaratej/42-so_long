@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/15 11:37:57 by cgaratej         ###   ########.fr       */
+/*   Created: 2024/02/08 19:03:21 by cgaratej          #+#    #+#             */
+/*   Updated: 2024/02/15 14:49:59 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-# define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 600
-# define MLX_ERROR 1
+# include <unistd.h>
+# include <stdlib.h>
 
-# include <fcntl.h>
-# include <errno.h>
-# include <stdio.h>
-# include "libft/ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include "../minilibx/mlx.h"
-
-typedef struct s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
+char	*get_next_line(int fd);
+int		ft_strlen(const char *str);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_create_start(char *start, char *buffer);
+char	*freeoffree(char **str);
 
 #endif

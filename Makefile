@@ -6,11 +6,13 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/04/10 14:50:04 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/15 12:34:01 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT = inc/libft/libft.a
+GET_NEX_LINE= inc/libft/get_next_line/libftget_next_line.a
+PRINTF= inc/libft/ft_printf/libftprintf.a
 LIBFT_MAKE = make --no-print-directory -C inc/libft
 MINILIBX =	minilibx/libmlx.a
 MINILIBX_MAKE =  make --no-print-directory -C minilibx
@@ -36,7 +38,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): libft minilib $(OBJ) $(INCLUDE)
-	@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT) $(MINILIBX) $(SRC) -o $(NAME)
+	@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT) $(GET_NEX_LINE) $(PRINTF) $(MINILIBX) $(SRC) -o $(NAME)
 	@echo "\n$(LGREEN)Create $(NAME) ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
