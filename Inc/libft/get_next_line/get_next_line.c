@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:01:13 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/02/16 11:34:58 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:34:17 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char	*ft_move_start(char *str)
 		return (free(str), NULL);
 	if (str[i] == '\n')
 		i++;
-	buff = malloc(1 + ft_strlen(str) - i);
+	buff = malloc(1 + ft_strlen_gnl(str) - i);
 	if (!buff)
 		return (free(str), NULL);
 	j = 0;

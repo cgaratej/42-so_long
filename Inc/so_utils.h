@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/15 17:43:44 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:23:51 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@
 # define WINDOW_HEIGHT 600
 # define MLX_ERROR 1
 
+enum e_map
+{
+	floor = 0,
+	wall = 1,
+	collect = 'C',
+	portal = 'E',
+	player = 'P',
+};
+
 typedef struct s_img
 {
 	void	*img;
@@ -37,10 +46,29 @@ typedef struct s_img
 	int		endian;
 }		t_img;
 
+typedef struct s_counter
+{
+	int		empty;
+	int		collectible;
+	int		exit;
+	int		start;
+	int		movements;
+}		t_counter;
+
+typedef struct s_draw
+{
+	char	**map;
+	int		height;
+	int		length;
+	char	*line;
+}	t_draw;
+
 typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*window_ptr;
+	t_draw		plot;
+	t_counter	i;	
 	t_img		sprite;
 	t_img		sprite_l;
 	t_img		sprite_r;
@@ -49,7 +77,12 @@ typedef struct s_game
 	t_img		tree;
 	t_img		collect;
 	t_img		portal;
-}	t_game;
+}		t_game;
 
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}		t_point;
 
 #endif

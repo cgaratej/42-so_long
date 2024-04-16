@@ -8,6 +8,7 @@
 # Executables
 *.out
 *.exe
+so_long
 
 # Temp files
 *.swp

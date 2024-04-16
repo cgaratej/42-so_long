@@ -6,13 +6,13 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:06:31 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/02/14 17:56:10 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:33:40 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *str)
+int	ft_strlen_gnl(const char *str)
 {
 	int	i;
 
@@ -53,8 +53,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 && s2)
 	{
-		len1 = ft_strlen(s1);
-		len2 = ft_strlen(s2);
+		len1 = ft_strlen_gnl(s1);
+		len2 = ft_strlen_gnl(s2);
 		str = malloc(sizeof(char) * (len1 + len2 + 1));
 		if (str == NULL)
 			return (NULL);

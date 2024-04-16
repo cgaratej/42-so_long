@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:41:39 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/15 16:52:56 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:57:51 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@
 # define PATH_SPRITE_R "./assets/player/right.xpm"
 # define PATH_FLOOR "./assets/floor.xpm"
 # define PATH_TREE "./assets/tree.xpm"
-
 
 #endif
