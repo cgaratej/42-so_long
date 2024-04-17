@@ -41,7 +41,7 @@ all: $(NAME)
 
 $(NAME): printf get_next_line $(OBJ) $(INCLUDE)
 	@$(LIB) $(NAME) $(OBJ)
-	@echo "\n$(LGREEN)Create $(NAME) ✔\n$(NONE)"
+	@echo "\n$(LGREEN)Create $(NAME) ✔$(NONE)"
 
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLAGS) -o $@ -c $<

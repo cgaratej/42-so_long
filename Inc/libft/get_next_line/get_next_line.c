@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:01:13 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/16 14:34:17 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:54:38 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,22 +73,22 @@ static char	*read_document(int fd, char *start_str)
 
 	tmp = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!tmp)
-		return (freeoffree(&start_str));
+		return (freeoffree_gnl(&start_str));
 	fd_read = 1;
-	while (!(ft_strchr(start_str, '\n')) && fd_read != 0)
+	while (!(ft_strchr_gnl(start_str, '\n')) && fd_read != 0)
 	{
 		fd_read = read(fd, tmp, BUFFER_SIZE);
 		if (fd_read == -1)
 		{
 			free(tmp);
-			return (freeoffree(&start_str));
+			return (freeoffree_gnl(&start_str));
 		}
 		if (fd_read == 0 && !start_str)
 			return (free(tmp), NULL);
 		tmp[fd_read] = '\0';
-		start_str = ft_create_start(start_str, tmp);
+		start_str = ft_create_start_gnl(start_str, tmp);
 		if (!start_str)
-			return (free(tmp), freeoffree(&start_str));
+			return (free(tmp), freeoffree_gnl(&start_str));
 	}
 	free(tmp);
 	return (start_str);
@@ -101,13 +101,13 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	if (!start_str || !ft_strchr(start_str, '\n'))
+	if (!start_str || !ft_strchr_gnl(start_str, '\n'))
 		start_str = read_document(fd, start_str);
 	if (!start_str)
 		return (NULL);
 	conten = ft_read_line(start_str);
 	if (!conten)
-		return (freeoffree(&start_str));
+		return (freeoffree_gnl(&start_str));
 	start_str = ft_move_start(start_str);
 	return (conten);
 }

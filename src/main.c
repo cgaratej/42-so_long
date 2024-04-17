@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:37:28 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/16 14:53:13 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:28:04 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	if (argc > 2)
-		ft_printf("Can't open multiple files!");
+		game_over("Can't open multiple files!", &game, error);
 	else if (argc < 2)
-		ft_printf("Please specify file name!");
+		game_over("Please specify file name!", &game, error);
 	else if (argc == 2)
 	{
 		if (is_ber_file(argv[1]))
 			init_game(&game, argv[1]);
 		else
-			ft_printf("The file is invalid!");
+			game_over("The file is invalid!", &game, error);
 	}
 	return (0);
 }

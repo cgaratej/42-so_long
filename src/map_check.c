@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   map_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 19:03:21 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/17 14:53:45 by cgaratej         ###   ########.fr       */
+/*   Created: 2024/04/17 14:13:02 by cgaratej          #+#    #+#             */
+/*   Updated: 2024/04/17 14:34:55 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../inc/so_long.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+void	check_num_elemts_valids(t_game *game, t_counter *cn, char *tmp)
+{
+	if (!(cn->collectible > 0 && cn->exit == 1
+			&& cn->start == 1 && cn->empty > 0))
+	{
+		free(tmp);
+		game_over("Invalid, file!", game, error);
+	}
+}
 
-# include <unistd.h>
-# include <stdlib.h>
-
-char	*get_next_line(int fd);
-int		ft_strlen_gnl(const char *str);
-char	*ft_strchr_gnl(const char *s, int c);
-char	*ft_strjoin_gnl(char const *s1, char const *s2);
-char	*ft_create_start_gnl(char *start, char *buffer);
-char	*freeoffree_gnl(char **str);
-
-#endif
+int	is_double_line(char *string_map, int i)
+{
+	return ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])));
+}

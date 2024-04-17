@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:11:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/16 14:34:45 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:42:32 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,39 @@ void	destroy_image(t_game *game)
 	mlx_destroy_window(game->mlx_ptr, game->window_ptr);
 	//mlx_destroy_display(game->mlx_ptr);
 	free(game->mlx_ptr);
+	return ;
+}
+
+void	free_map(t_game *game)
+{
+	while (game->plot.height > 0)
+	{
+		free(game->plot.map[game->plot.height - 1]);
+		game->plot.height--;
+	}
+	free(game->plot.map);
+}
+
+void	game_over(char *message, t_game *game, enum e_state i)
+{
+	if (i == event_ending || i == end_game)
+	{
+		ft_printf("%s\n", message);
+		destroy_image(game);
+		exit(0);
+	}
+	else if (i == error)
+	{
+		ft_printf(RED"Error\n%s\n"ENDC, message);
+		exit(1);
+	}
+	else if (i == file_error)
+	{
+		ft_printf(RED"Error\n%s\n"ENDC, message);
+		exit(1);
+	}
+	ft_printf(RED"Error\n%s\n"ENDC, message);
+	destroy_image(game);
+	exit(1);
 	return ;
 }

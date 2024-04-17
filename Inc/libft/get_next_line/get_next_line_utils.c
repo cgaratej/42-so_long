@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:06:31 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/16 14:33:40 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:57:48 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen_gnl(const char *str)
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	int		i;
 	char	*ch;
@@ -44,7 +44,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	int		i;
 	int		len1;
@@ -73,7 +73,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (NULL);
 }
 
-char	*ft_create_start(char *start, char *buffer)
+char	*ft_create_start_gnl(char *start, char *buffer)
 {
 	char	*str;
 
@@ -86,12 +86,12 @@ char	*ft_create_start(char *start, char *buffer)
 	}
 	if (!start || !buffer)
 		return (NULL);
-	str = ft_strjoin(start, buffer);
+	str = ft_strjoin_gnl(start, buffer);
 	free(start);
 	return (str);
 }
 
-char	*freeoffree(char **str)
+char	*freeoffree_gnl(char **str)
 {
 	if (*str)
 	{

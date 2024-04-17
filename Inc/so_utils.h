@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/16 14:23:51 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:57:07 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,20 @@
 
 enum e_map
 {
-	floor = 0,
-	wall = 1,
+	floor = '0',
+	wall = '1',
 	collect = 'C',
 	portal = 'E',
 	player = 'P',
+};
+
+enum e_state
+{
+	event_ending = -1,
+	end_game = -1,
+	error = 2,
+	file_error = 3,
+	map_char_error = 4,
 };
 
 typedef struct s_img
