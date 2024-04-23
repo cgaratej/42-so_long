@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:37:28 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/17 14:28:04 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:17:15 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ static int	is_ber_file(const char *argv)
 static void	init_game(t_game *game, char *path)
 {
 	init_map(game, path);
-	/*init_window(game);
+	init_window(game);
 	init_images(game);
 	render_map(game);
-	mlx_loop(game->mlx_ptr);*/
+	/*mlx_loop(game->mlx_ptr);*/
 }
 
 int	main(int argc, char **argv)

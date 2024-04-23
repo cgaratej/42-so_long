@@ -6,16 +6,16 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/04/17 14:40:58 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/23 13:39:13 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT = inc/libft/libft.a
-GET_NEX_LINE= inc/libft/get_next_line/libftget_next_line.a
-PRINTF= inc/libft/ft_printf/libftprintf.a
-LIBFT_MAKE = make --no-print-directory -C inc/libft
-MINILIBX =	minilibx/libmlx.a
-MINILIBX_MAKE =  make --no-print-directory -C minilibx
+LIBFT = utils/libft/libft.a
+GET_NEX_LINE= utils/libft/get_next_line/libftget_next_line.a
+PRINTF= utils/libft/ft_printf/libftprintf.a
+LIBFT_MAKE = make --no-print-directory -C utils/libft
+MINILIBX =	utils/minilibx/libmlx.a
+MINILIBX_MAKE =  make --no-print-directory -C utils/minilibx
 
 NAME = so_long
 CFLAGS = -Wall -Werror -Wextra
@@ -31,8 +31,8 @@ RED = \033[1;91m
 NONE=\033[0m
 
 SRC= src/main.c src/imagen_utils.c \
-	src/game_over.c src/map.c src/map_utlis.c \
-	src/map_check.c
+	src/game_over.c src/map/map.c src/map/map_utlis.c \
+	src/map/map_check.c
 
 OBJ = $(SRC:.c=.o)
 

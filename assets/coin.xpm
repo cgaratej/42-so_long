@@ -1,0 +1,24 @@
+/* XPM */
+static char *_49d616fd06f4b8495ceb08c4537047al7y69kaDKCYsHoVa[] = {
+/* columns rows colors chars-per-pixel */
+"10 12 6 1 ",
+"  c None",
+". c black",
+"X c #FFF700",
+"o c #FFB300",
+"O c #FFFED0",
+"+ c #FF9600",
+/* pixels */
+"          ",
+"    ..    ",
+"   .Xo.   ",
+"  .OXo+.  ",
+" .OXoo++. ",
+" .OXooo+. ",
+" .OXooo+. ",
+" .XXoo++. ",
+"  .XXo+.  ",
+"   .Xo.   ",
+"    ..    ",
+"          "
+};

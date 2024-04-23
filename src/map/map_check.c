@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../../inc/so_long.h"
 
 void	check_num_elemts_valids(t_game *game, t_counter *cn, char *tmp)
 {
@@ -26,3 +26,8 @@ int	is_double_line(char *string_map, int i)
 {
 	return ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])));
 }
+
+/*int	is_surrounded_by_walls(t_game *game, int y, int x)
+{
+
+}*/

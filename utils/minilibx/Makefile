@@ -7,8 +7,6 @@ SRC+= mlx_png.c mlx_mouse.m
 OBJ1=$(SRC:.c=.o)
 OBJ=$(OBJ1:.m=.o)
 CFLAGS+=-O2
-RED = \033[1;91m
-NONE=\033[0m
 
 # add to match string put with X11 in size and position
 CFLAGS+= -DSTRINGPUTX11
@@ -20,8 +18,7 @@ $(NOM):	$(OBJ)
 	ranlib $(NOM)
 
 clean:
-	@rm -f $(NOM) $(OBJ) *~
-	@rm -f mlx_app
-	@echo "$(RED)$(NOM) Deleted$(NONE)"
+	rm -f $(NOM) $(OBJ) *~
+	rm -f mlx_app
 
 re: clean all

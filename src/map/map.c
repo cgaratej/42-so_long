@@ -6,11 +6,28 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:42:56 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/17 16:52:40 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:20:20 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../../inc/so_long.h"
+
+void	render_map(t_game *game)
+{
+	t_point	coord;
+
+	coord.y = 0;
+	while (game->plot.map[coord.y])
+	{
+		coord.x = 0;
+		while (game->plot.map[coord.y][coord.x])
+		{
+			//mapa_check_on(game, coord.y, coord.x);
+			coord.x++;
+		}
+		coord.y++;
+	}
+}
 
 static void	count_elements(t_counter *cn, char c)
 {
@@ -60,6 +77,7 @@ static void	read_map(t_game *game, int fd)
 		free(game->plot.line);
 		game->plot.height++;
 	}
+	ft_printf("h %d\n", game->plot.height);
 	game->i = start_counter(tmp, game);
 	game->plot.map = ft_split(tmp, '\n');
 	free(tmp);
