@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/17 16:57:07 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:51:21 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@
 # define GREEN	"\033[1m\033[32m"
 # define ENDC	"\033[0m"
 # define SPRITE_SIZE	32
-
-# define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 600
-# define MLX_ERROR 1
 
 enum e_map
 {

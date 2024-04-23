@@ -6,18 +6,17 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/23 13:32:20 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:53:24 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-static int	is_larger_than_window(t_game *game);
-
 void	init_window(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
-	if (is_larger_than_window(game))
+	if ((game->plot.length * SPRITE_SIZE) >= 1920 \
+		|| (game->plot.height * SPRITE_SIZE) >= 720)
 	{
 		free_map(game);
 		free(game->mlx_ptr);
@@ -49,22 +48,3 @@ t_img	new_sprite(void *mlx, char *path)
 	return (img);
 }
 
-static t_point	get_screen_size(t_game *game)
-{
-	t_point	point;
-
-	mlx_get_screen_size(game->mlx_ptr, &point.x, &point.y);
-	return (point);
-}
-
-static int	is_larger_than_window(t_game *game)
-{
-	t_point	screen_size;
-
-	screen_size = get_screen_size(game);
-	return (\
-	((game->plot.length * SPRITE_SIZE) > screen_size.x) \
-	|| \
-	((game->plot.height * SPRITE_SIZE) > screen_size.y) \
-	);
-}
