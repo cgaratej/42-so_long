@@ -6,34 +6,17 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:42:56 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/23 16:53:38 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:45:45 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-void	render_map(t_game *game)
-{
-	t_point	coord;
-
-	coord.y = 0;
-	while (game->plot.map[coord.y])
-	{
-		coord.x = 0;
-		while (game->plot.map[coord.y][coord.x])
-		{
-			map_check_one(game, coord.y, coord.x);
-			coord.x++;
-		}
-		coord.y++;
-	}
-}
-
 static void	count_elements(t_counter *cn, char c)
 {
-	if (c == collect)
+	if (c == coin)
 		cn->collectible++;
-	else if (c == portal)
+	else if (c == door)
 		cn->exit++;
 	else if (c == player)
 		cn->start++;

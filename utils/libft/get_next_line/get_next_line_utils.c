@@ -6,11 +6,12 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:06:31 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/17 14:57:48 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:45:49 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 int	ft_strlen_gnl(const char *str)
 {
@@ -68,7 +69,7 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2)
 			len1++;
 		}
 		str[len1] = '\0';
-		return (str);
+		return (free((char *)s1), str);
 	}
 	return (NULL);
 }
@@ -87,7 +88,6 @@ char	*ft_create_start_gnl(char *start, char *buffer)
 	if (!start || !buffer)
 		return (NULL);
 	str = ft_strjoin_gnl(start, buffer);
-	free(start);
 	return (str);
 }
 

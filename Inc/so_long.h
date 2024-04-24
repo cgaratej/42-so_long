@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/23 16:09:30 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:13:29 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void		check_num_elemts_valids(t_game *game, \
 int			is_double_line(char *string_map, int i);
 void		render_map(t_game *game);
 int			is_surrounded_by_walls(t_game *game, int y, int x);
-void		map_check_one(t_game *game, int y, int x);
+int			is_character_valid(t_game *game, int y, int x);
+int			is_rectangular(t_game *game);
 
 #endif

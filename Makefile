@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/04/23 13:47:57 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/24 16:54:04 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ NONE=\033[0m
 
 SRC= src/main.c src/imagen_utils.c \
 	src/game_over.c src/map/map.c src/map/map_utlis.c \
-	src/map/map_check.c
+	src/map/map_check.c src/map/map_render.c
 
 OBJ = $(SRC:.c=.o)
 

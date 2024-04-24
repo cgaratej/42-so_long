@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/23 13:51:21 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:18:41 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ enum e_map
 {
 	floor = '0',
 	wall = '1',
-	collect = 'C',
-	portal = 'E',
+	coin = 'C',
+	door = 'E',
 	player = 'P',
 };
 
@@ -80,8 +80,8 @@ typedef struct s_game
 	t_img		sprite_f;
 	t_img		floor;
 	t_img		tree;
-	t_img		collect;
-	t_img		portal;
+	t_img		coin;
+	t_img		door;
 }		t_game;
 
 typedef struct s_point

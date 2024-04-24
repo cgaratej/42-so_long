@@ -22,6 +22,20 @@ void	check_num_elemts_valids(t_game *game, t_counter *cn, char *tmp)
 	}
 }
 
+int	is_rectangular(t_game *game)
+{
+	if (game->plot.height == game->plot.length)
+		return (0);
+	return (1);
+}
+
+int	is_character_valid(t_game *game, int y, int x)
+{
+	if (!ft_strchr("10CEP", game->plot.map[y][x]))
+		return (0);
+	return (1);
+}
+
 int	is_double_line(char *string_map, int i)
 {
 	return ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])));
