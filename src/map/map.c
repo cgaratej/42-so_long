@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:42:56 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/24 16:45:45 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:29:52 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,23 @@ static t_counter	start_counter(char *string_map, t_game *game)
 	return (cn);
 }
 
+
+void	flood_fill(t_draw *map, int x, int y)
+{
+	if (x < 0 || x >= map->length || y < 0 || y >= map->height || \
+		map->map[y][x] == wall || map->map[y][x] == 'F')
+		return ;
+	if (map->map[y][x] == 'C')
+		map->ncoins++;
+	if (map->map[y][x] == 'E')
+		map->nexit++;
+	map->map[y][x] = 'F';
+	flood_fill(map, x + 1, y);
+	flood_fill(map, x - 1, y);
+	flood_fill(map, x, y + 1);
+	flood_fill(map, x, y - 1);
+}
+
 static void	read_map(t_game *game, int fd)
 {
 	char	*tmp;
@@ -66,13 +83,44 @@ static void	read_map(t_game *game, int fd)
 	return ;
 }
 
+t_draw	map_dup(t_game *game)
+{
+	t_draw	tmp;
+	int		i;
+
+	i = 0;
+	ft_memcpy(&tmp, &game->plot, sizeof(t_draw));
+	tmp.map = malloc(game->plot.length * sizeof(char *));
+	if (!tmp.map)
+		exit(-1);
+	while (i < game->plot.height)
+	{
+		tmp.map[i] = ft_strdup(game->plot.map[i]);
+		i++;
+	}
+	return (tmp);
+}
+
 void	init_map(t_game *game, char *path)
 {
-	int	fd;
+	int		fd;
+	t_draw	tmp;
 
 	fd = open_file(path);
+	game->plot = new_map();
 	read_map(game, fd);
 	game->plot.length = len_map_validation(game->plot.map, game);
+	render_map(game, 0);
+	tmp = map_dup(game);
+	flood_fill(&tmp, 1, 4);
+	if (game->i.collectible != tmp.ncoins || \
+		game->i.exit != tmp.nexit)
+	{
+		free_map(&game->plot);
+		free_map(&tmp);
+		game_over("Invalid, file!", game, error);
+	}
+	free_map(&tmp);
 	close(fd);
 	return ;
 }

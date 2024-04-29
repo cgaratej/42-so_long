@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:07:25 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/24 16:22:34 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:23:49 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	line_validation(char **map, t_game *game)
 		point.x = ft_strlen(map[i]);
 		if (point.x != point.y)
 		{
-			free_map(game);
+			free_map(&game->plot);
 			game_over("Invalid file: lines are not the same size!", \
 				game, error);
 		}
@@ -56,6 +56,18 @@ t_counter	new_counter(void)
 	counter.start = 0;
 	counter.movements = 0;
 	return (counter);
+}
+
+t_draw	new_map(void)
+{
+	t_draw	map;
+
+	map.ncoins = 0;
+	map.nexit = 0;
+	map.height = 0;
+	map.length = 0;
+
+	return (map);
 }
 
 int	len_map_validation(char **map, t_game *game)

@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/24 16:18:41 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:46:59 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct s_draw
 	int		height;
 	int		length;
 	char	*line;
+	int		ncoins;
+	int		nexit;
 }	t_draw;
 
 typedef struct s_game
@@ -73,7 +75,7 @@ typedef struct s_game
 	void		*mlx_ptr;
 	void		*window_ptr;
 	t_draw		plot;
-	t_counter	i;	
+	t_counter	i;
 	t_img		sprite;
 	t_img		sprite_l;
 	t_img		sprite_r;

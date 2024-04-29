@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:11:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/24 17:17:09 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:22:09 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ void	destroy_image(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->sprite_r.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite_f.img);
 	mlx_destroy_window(game->mlx_ptr, game->window_ptr);
-	free_map(game);
+	free_map(&game->plot);
 	free(game->mlx_ptr);
 	return ;
 }
 
-void	free_map(t_game *game)
+void	free_map(t_draw *map)
 {
-	while (game->plot.height >= 0)
+	while (map->height > 0)
 	{
-		free(game->plot.map[game->plot.height - 1]);
-		game->plot.height--;
+		free(map->map[map->height - 1]);
+		map->height--;
 	}
-	free(game->plot.map);
+	free(map->map);
 	return ;
 }
 

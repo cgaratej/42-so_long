@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/24 16:18:41 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:23:34 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_window(t_game *game)
 	if ((game->plot.length * SPRITE_SIZE) >= 1920 \
 		|| (game->plot.height * SPRITE_SIZE) >= 720)
 	{
-		free_map(game);
+		free_map(&game->plot);
 		free(game->mlx_ptr);
 		game_over("Map size larger than display resolution", game, error);
 	}
