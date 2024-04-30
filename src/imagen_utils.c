@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/29 17:23:34 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:14:15 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ t_img	new_sprite(void *mlx, char *path)
 	img.img = mlx_xpm_file_to_image(mlx, path, &img.h, &img.w);
 	return (img);
 }
-

@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:42:56 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/29 17:29:52 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:14:34 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static t_counter	start_counter(char *string_map, t_game *game)
 	return (cn);
 }
 
-
 void	flood_fill(t_draw *map, int x, int y)
 {
 	if (x < 0 || x >= map->length || y < 0 || y >= map->height || \
@@ -81,24 +80,6 @@ static void	read_map(t_game *game, int fd)
 	game->plot.map = ft_split(tmp, '\n');
 	free(tmp);
 	return ;
-}
-
-t_draw	map_dup(t_game *game)
-{
-	t_draw	tmp;
-	int		i;
-
-	i = 0;
-	ft_memcpy(&tmp, &game->plot, sizeof(t_draw));
-	tmp.map = malloc(game->plot.length * sizeof(char *));
-	if (!tmp.map)
-		exit(-1);
-	while (i < game->plot.height)
-	{
-		tmp.map[i] = ft_strdup(game->plot.map[i]);
-		i++;
-	}
-	return (tmp);
 }
 
 void	init_map(t_game *game, char *path)

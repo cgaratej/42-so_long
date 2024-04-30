@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/29 13:08:56 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:11:59 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,22 @@ void	render_map(t_game *game, int bol)
 		}
 		coord.y++;
 	}
+}
+
+t_draw	map_dup(t_game *game)
+{
+	t_draw	tmp;
+	int		i;
+
+	i = 0;
+	ft_memcpy(&tmp, &game->plot, sizeof(t_draw));
+	tmp.map = malloc(game->plot.length * sizeof(char *));
+	if (!tmp.map)
+		exit(-1);
+	while (i < game->plot.height)
+	{
+		tmp.map[i] = ft_strdup(game->plot.map[i]);
+		i++;
+	}
+	return (tmp);
 }

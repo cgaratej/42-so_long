@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:07:25 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/29 17:23:49 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:14:47 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ t_draw	new_map(void)
 	map.nexit = 0;
 	map.height = 0;
 	map.length = 0;
-
 	return (map);
 }
 
