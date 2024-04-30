@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/29 13:46:59 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:26:59 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,19 @@ typedef struct s_draw
 	int		nexit;
 }	t_draw;
 
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}		t_point;
+
 typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*window_ptr;
 	t_draw		plot;
 	t_counter	i;
+	t_point		player_pos;
 	t_img		sprite;
 	t_img		sprite_l;
 	t_img		sprite_r;
@@ -86,10 +93,5 @@ typedef struct s_game
 	t_img		door;
 }		t_game;
 
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}		t_point;
 
 #endif
