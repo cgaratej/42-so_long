@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/30 12:12:26 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:25:33 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,11 @@ int			is_character_valid(t_game *game, int y, int x);
 int			is_rectangular(t_game *game);
 t_draw		new_map(void);
 t_draw		map_dup(t_game *game);
+
+/* Movements */
+int			key_check(int keycode, t_game *game);
+
+/* Window */
+int			red_cross(t_game *game);
 
 #endif

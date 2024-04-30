@@ -6,18 +6,22 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/30 12:26:59 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:58:34 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_UTILS_H
 # define SO_UTILS_H
 
-# define UP		119
-# define DOWN	115
-# define LEFT	97
-# define RIGHT	100
-# define ESC	65307
+# define W	13
+# define S	1
+# define A	0
+# define D	2
+# define UP		126
+# define DOWN	125
+# define LEFT	123
+# define RIGHT	124
+# define ESC	53
 # define RED	"\033[1m\033[31m"
 # define GREEN	"\033[1m\033[32m"
 # define ENDC	"\033[0m"
@@ -48,7 +52,7 @@ typedef struct s_img
 	int		h;
 	int		w;
 	int		bpp;
-	int		endian;
+	int		men;
 }		t_img;
 
 typedef struct s_counter
