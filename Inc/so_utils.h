@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/30 15:58:34 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:31:53 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_img
 	int		h;
 	int		w;
 	int		bpp;
-	int		men;
+	int		mem;
 }		t_img;
 
 typedef struct s_counter

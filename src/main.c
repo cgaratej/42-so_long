@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:37:28 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/30 15:34:56 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:29:04 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ static void	init_game(t_game *game, char *path)
 	render_map(game, 1);
 	init_hook(game, 2, 0, key_check);
 	init_hook(game, 17, 0, red_cross);
-	//init_hook(game, 12, 32768, mini_maker);
 	mlx_loop(game->mlx_ptr);
 }
 
@@ -64,4 +63,10 @@ static void	init_hook(t_game *game, int event, int mask, int (*f)())
 		mask, \
 		f, \
 		game);
+}
+
+int	red_cross(t_game *game)
+{
+	game_over("", game, event_ending);
+	return (0);
 }
