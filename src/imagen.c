@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   imagen_utils.c                                     :+:      :+:    :+:   */
+/*   imagen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/30 12:14:15 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:11:29 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	init_images(t_game *game)
 	game->tree = new_sprite(game->mlx_ptr, PATH_TREE);
 	game->coin = new_sprite(game->mlx_ptr, PATH_COIN);
 	game->door = new_sprite(game->mlx_ptr, PATH_DOOR);
+	game->door_open = new_sprite(game->mlx_ptr, PATH_DOOR_OPEN);
 }
 
 t_img	new_sprite(void *mlx, char *path)

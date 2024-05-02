@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/02 15:29:59 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:12:07 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,14 @@ void	render_map(t_game *game, int bol)
 static void	map_set_img(t_game *game, int y, int x)
 {
 	if (game->plot.map[y][x] == door)
-		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
-			game->door.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+	{
+		if (game->i.collectible == 0)
+			mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+				game->door_open.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+		else
+			mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+				game->door.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+	}
 	else if (game->plot.map[y][x] == wall)
 		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
 			game->tree.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));

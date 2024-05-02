@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:11:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/30 15:48:28 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:30:41 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	destroy_image(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->tree.img);
 	mlx_destroy_image(game->mlx_ptr, game->floor.img);
 	mlx_destroy_image(game->mlx_ptr, game->door.img);
+	mlx_destroy_image(game->mlx_ptr, game->door_open.img);
 	mlx_destroy_image(game->mlx_ptr, game->coin.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite_l.img);
