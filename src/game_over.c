@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:11:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/02 16:30:41 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:34:20 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	destroy_image(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->sprite_f.img);
 	mlx_destroy_window(game->mlx_ptr, game->window_ptr);
 	free_map(&game->plot);
-	free(game->mlx_ptr);
 	return ;
 }
 
