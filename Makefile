@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/05/02 15:32:22 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/05/08 18:15:23 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,24 @@ SRC= src/main.c src/imagen.c \
 	src/map/map_check.c src/map/map_render.c src/player/movements.c \
 	src/player/mov_utils.c
 
+SRC_BONUS= src_bonus/main_bonus.c src_bonus/imagen_bonus.c \
+	src_bonus/game_over_bonus.c src_bonus/map/map_bonus.c src_bonus/map/map_utlis_bonus.c \
+	src_bonus/map/map_check_bonus.c src_bonus/map/map_render_bonus.c \
+	src_bonus/player/movements_bonus.c src_bonus/player/mov_utils_bonus.c 
+
 OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): libft minilib $(OBJ) $(INCLUDE)
-	@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT) $(GET_NEX_LINE) $(PRINTF) $(MINILIBX) $(SRC) -o $(NAME)
+	@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT) $(GET_NEX_LINE) $(PRINTF) $(MINILIBX) $(OBJ) -o $(NAME)
 	@echo "\n$(LGREEN)Create $(NAME) ✔\n$(NONE)"
+
+bonus: libft minilib $(INCLUDE) $(OBJ_BONUS)
+	@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT) $(GET_NEX_LINE) $(PRINTF) $(MINILIBX) $(OBJ_BONUS) -o $(NAME)
+	@touch $@
+	@echo "\n$(LGREEN)Create $(NAME) bonus ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLAGS) -Imlx -c $< -o $@
@@ -56,7 +67,7 @@ minilib:
 	@$(MINILIBX_MAKE)
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ) $(OBJ_BONUS)
 	@$(LIBFT_MAKE) clean
 	@$(MINILIBX_MAKE) clean
 	@echo "$(RED)Deleted .o files$(NONE)"
@@ -68,4 +79,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re libft minilib
+.PHONY: all clean fclean re libft minilib bonus

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mov_utils.c                                        :+:      :+:    :+:   */
+/*   mov_utils_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:47:16 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 17:16:53 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/08 17:35:53 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../inc/so_long_bonus.h"
 
 int	check_valid_mov(t_game *game, int y, int x);
 
@@ -34,6 +34,10 @@ int	check_valid_mov(t_game *game, int y, int x)
 	if (game->i.collectible == 0 && game->plot.map[y][x] == door)
 	{
 		game_over(GREEN"\n\nThe End! :)"ENDC, game, end_game);
+	}
+	if (game->plot.map[y][x] == enemy)
+	{
+		game_over(RED"\n\nYour Death"ENDC, game, deat);
 	}
 	if (game->plot.map[y][x] == coin)
 		game->i.collectible--;
