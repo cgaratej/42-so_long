@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 12:54:26 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:40:58 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,5 @@ typedef struct s_game
 	t_img		door;
 	t_img		door_open;
 }		t_game;
-
 
 #endif
