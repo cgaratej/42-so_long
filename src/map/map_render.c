@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/02 16:12:07 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:03:01 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	map_set_img(t_game *game, int y, int x);
 static void	map_check_one(t_game *game, int y, int x);
+static void	player_render(t_game *game, int y, int x);
 
 void	render_map(t_game *game, int bol)
 {
@@ -58,8 +59,7 @@ static void	map_set_img(t_game *game, int y, int x)
 		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
 			game->coin.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
 	else if (game->plot.map[y][x] == player)
-		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
-			game->sprite_f.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+		player_render(game, y, x);
 	else
 		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
 			game->floor.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
@@ -92,4 +92,20 @@ t_draw	map_dup(t_game *game)
 		i++;
 	}
 	return (tmp);
+}
+
+static void	player_render(t_game *game, int y, int x)
+{
+	if (game->sprite.mem == up)
+		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+			game->sprite.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+	else if (game->sprite.mem == down && game->sprite.mem == 0)
+		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+			game->sprite_f.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+	else if (game->sprite.mem == left)
+		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+			game->sprite_l.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+	else if (game->sprite.mem == right)
+		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+			game->sprite_r.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
 }

@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/02 16:11:29 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:05:18 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	init_images(t_game *game)
 	game->coin = new_sprite(game->mlx_ptr, PATH_COIN);
 	game->door = new_sprite(game->mlx_ptr, PATH_DOOR);
 	game->door_open = new_sprite(game->mlx_ptr, PATH_DOOR_OPEN);
+	game->sprite.mem = 0;
 }
 
 t_img	new_sprite(void *mlx, char *path)
