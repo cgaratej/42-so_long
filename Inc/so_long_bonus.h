@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:42:44 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 13:49:33 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:24:12 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 /*Window and Images*/
 t_img		new_sprite(void *mlx, char *path);
 void		init_images(t_game *game);
+void		put_img(t_game *game, int y, int x, void *img);
 
 /*Game over*/
 void		destroy_image(t_game *game);
@@ -54,5 +55,11 @@ void		mov_player(t_game *game, int new_y, int new_x);
 /* Window */
 int			red_cross(t_game *game);
 void		init_window(t_game *game);
+
+/* Animations */
+void		anim_left(t_game *game, int y, int x);
+void		anim_rigth(t_game *game, int y, int x);
+void		anim_front(t_game *game, int y, int x);
+void		anim_back(t_game *game, int y, int x);
 
 #endif

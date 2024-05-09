@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 13:50:53 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:04:23 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,17 @@ typedef struct s_game
 	t_counter	i;
 	t_point		player_pos;
 	t_img		sprite;
+	t_img		sprite_1;
+	t_img		sprite_2;
 	t_img		sprite_l;
+	t_img		sprite_l1;
+	t_img		sprite_l2;
 	t_img		sprite_r;
+	t_img		sprite_r1;
+	t_img		sprite_r2;
 	t_img		sprite_f;
+	t_img		sprite_f1;
+	t_img		sprite_f2;
 	t_img		floor;
 	t_img		tree;
 	t_img		coin;

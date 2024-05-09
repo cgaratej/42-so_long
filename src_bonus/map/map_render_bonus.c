@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 13:51:19 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:26:04 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	map_set_img(t_game *game, int y, int x);
 static void	map_check_one(t_game *game, int y, int x);
 static void	player_render(t_game *game, int y, int x);
+void	put_img(t_game *game, int y, int x, void *img);
 
 void	render_map(t_game *game, int bol)
 {
@@ -100,15 +101,11 @@ t_draw	map_dup(t_game *game)
 static void	player_render(t_game *game, int y, int x)
 {
 	if (game->sprite.mem == up)
-		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
-			game->sprite.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+		anim_back(game, y, x);
 	else if (game->sprite.mem == down && game->sprite.mem == 0)
-		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
-			game->sprite_f.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+		anim_front(game, y, x);
 	else if (game->sprite.mem == left)
-		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
-			game->sprite_l.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+		anim_left(game, y, x);
 	else if (game->sprite.mem == right)
-		mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
-			game->sprite_r.img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
+		anim_rigth(game, y, x);
 }

@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 14:01:43 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:22:57 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,17 @@ void	init_window(t_game *game)
 void	init_images(t_game *game)
 {
 	game->sprite = new_sprite(game->mlx_ptr, PATH_SPRITE);
+	game->sprite_1 = new_sprite(game->mlx_ptr, PATH_SPRITE1);
+	game->sprite_2 = new_sprite(game->mlx_ptr, PATH_SPRITE2);
 	game->sprite_l = new_sprite(game->mlx_ptr, PATH_SPRITE_L);
+	game->sprite_l1 = new_sprite(game->mlx_ptr, PATH_SPRITE_L1);
+	game->sprite_l2 = new_sprite(game->mlx_ptr, PATH_SPRITE_L2);
 	game->sprite_r = new_sprite(game->mlx_ptr, PATH_SPRITE_R);
+	game->sprite_r1 = new_sprite(game->mlx_ptr, PATH_SPRITE_R1);
+	game->sprite_r2 = new_sprite(game->mlx_ptr, PATH_SPRITE_R2);
 	game->sprite_f = new_sprite(game->mlx_ptr, PATH_SPRITE_F);
+	game->sprite_f1 = new_sprite(game->mlx_ptr, PATH_SPRITE_F1);
+	game->sprite_f2 = new_sprite(game->mlx_ptr, PATH_SPRITE_F2);
 	game->floor = new_sprite(game->mlx_ptr, PATH_FLOOR);
 	game->tree = new_sprite(game->mlx_ptr, PATH_TREE);
 	game->coin = new_sprite(game->mlx_ptr, PATH_COIN);
@@ -51,4 +59,10 @@ t_img	new_sprite(void *mlx, char *path)
 
 	img.img = mlx_xpm_file_to_image(mlx, path, &img.h, &img.w);
 	return (img);
+}
+
+void	put_img(t_game *game, int y, int x, void *img)
+{
+	mlx_put_image_to_window(game->mlx_ptr, game->window_ptr, \
+			img, (x * SPRITE_SIZE), (y * SPRITE_SIZE));
 }

@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/05/08 18:15:23 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/05/09 14:24:43 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC= src/main.c src/imagen.c \
 SRC_BONUS= src_bonus/main_bonus.c src_bonus/imagen_bonus.c \
 	src_bonus/game_over_bonus.c src_bonus/map/map_bonus.c src_bonus/map/map_utlis_bonus.c \
 	src_bonus/map/map_check_bonus.c src_bonus/map/map_render_bonus.c \
-	src_bonus/player/movements_bonus.c src_bonus/player/mov_utils_bonus.c 
+	src_bonus/player/movements_bonus.c src_bonus/player/mov_utils_bonus.c src_bonus/player/player_animatios_bonus.c
 
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)

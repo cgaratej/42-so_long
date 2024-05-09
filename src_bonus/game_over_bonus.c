@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:11:20 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 14:05:25 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:22:17 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,17 @@ void	destroy_image(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->door_open.img);
 	mlx_destroy_image(game->mlx_ptr, game->coin.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_1.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_2.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite_l.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_l1.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_l2.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite_r.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_r1.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_r2.img);
 	mlx_destroy_image(game->mlx_ptr, game->sprite_f.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_f1.img);
+	mlx_destroy_image(game->mlx_ptr, game->sprite_f2.img);
 	mlx_destroy_window(game->mlx_ptr, game->window_ptr);
 	free_map(&game->plot);
 	return ;
