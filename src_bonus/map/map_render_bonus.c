@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/09 15:42:46 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:12:13 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ static void	player_render(t_game *game, int y, int x)
 		anim_front(game, y, x);
 	else if (game->sprite.mem == down && game->sprite.mem == 0)
 	{
-		if (game->sprite.mem == 0)
+		if (game->i.movements == 0)
 			put_img(game, y, x, game->sprite_f.img);
 		else
 			anim_back(game, y, x);

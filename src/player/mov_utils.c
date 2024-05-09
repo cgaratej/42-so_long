@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:47:16 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 17:16:53 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:23:14 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check_valid_mov(t_game *game, int y, int x)
 		return (0);
 	if (game->i.collectible == 0 && game->plot.map[y][x] == door)
 	{
-		game_over(GREEN"\n\nThe End! :)"ENDC, game, end_game);
+		game_over(GREEN"\n\nYou Win! 🏅"ENDC, game, end_game);
 	}
 	if (game->plot.map[y][x] == coin)
 		game->i.collectible--;
