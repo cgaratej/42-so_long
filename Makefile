@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/05/09 14:24:43 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/05/09 16:27:04 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,6 @@ $(NAME): libft minilib $(OBJ) $(INCLUDE)
 
 bonus: libft minilib $(INCLUDE) $(OBJ_BONUS)
 	@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT) $(GET_NEX_LINE) $(PRINTF) $(MINILIBX) $(OBJ_BONUS) -o $(NAME)
-	@touch $@
 	@echo "\n$(LGREEN)Create $(NAME) bonus ✔\n$(NONE)"
 
 %.o: %.c $(INCLUDE)
