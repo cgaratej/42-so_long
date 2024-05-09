@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/09 14:26:04 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:42:46 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,14 @@ t_draw	map_dup(t_game *game)
 static void	player_render(t_game *game, int y, int x)
 {
 	if (game->sprite.mem == up)
-		anim_back(game, y, x);
-	else if (game->sprite.mem == down && game->sprite.mem == 0)
 		anim_front(game, y, x);
+	else if (game->sprite.mem == down && game->sprite.mem == 0)
+	{
+		if (game->sprite.mem == 0)
+			put_img(game, y, x, game->sprite_f.img);
+		else
+			anim_back(game, y, x);
+	}
 	else if (game->sprite.mem == left)
 		anim_left(game, y, x);
 	else if (game->sprite.mem == right)

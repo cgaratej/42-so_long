@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:14:32 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/09 14:21:19 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:42:34 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	anim_rigth(t_game *game, int y, int x)
 		put_img(game, y, x, game->sprite_r.img);
 }
 
-void	anim_front(t_game *game, int y, int x)
+void	anim_back(t_game *game, int y, int x)
 {
 	if (game->i.movements % 3 == 0)
 		put_img(game, y, x, game->sprite_f2.img);
@@ -42,7 +42,7 @@ void	anim_front(t_game *game, int y, int x)
 		put_img(game, y, x, game->sprite_f.img);
 }
 
-void	anim_back(t_game *game, int y, int x)
+void	anim_front(t_game *game, int y, int x)
 {
 	if (game->i.movements % 3 == 0)
 		put_img(game, y, x, game->sprite_2.img);
