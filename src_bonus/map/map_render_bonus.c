@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/09 16:12:13 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:48:10 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	map_set_img(t_game *game, int y, int x);
 static void	map_check_one(t_game *game, int y, int x);
 static void	player_render(t_game *game, int y, int x);
-void	put_img(t_game *game, int y, int x, void *img);
 
 void	render_map(t_game *game, int bol)
 {
