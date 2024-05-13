@@ -13,8 +13,6 @@ so_long
 # Temp files
 *.swp
 
-maps/
-
 # Debug files
 *.dSYM/
 
