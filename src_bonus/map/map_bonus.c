@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:42:56 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/13 10:18:49 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:52:03 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,16 @@ void	init_map(t_game *game, char *path)
 	game->plot = new_map();
 	read_map(game, fd);
 	game->plot.length = len_map_validation(game->plot.map, game);
+	if ((game->plot.length * SPRITE_SIZE) >= 1920 \
+		|| (game->plot.height * SPRITE_SIZE) >= 720)
+	{
+		free_map(&game->plot);
+		game_over("Map size larger than display resolution", game, error);
+	}
 	render_map(game, 0);
 	tmp = map_dup(game);
 	flood_fill(&tmp, game->player_pos.x, game->player_pos.y);
-	if (game->i.collectible != tmp.ncoins || \
-		game->i.exit != tmp.nexit)
+	if (game->i.collectible != tmp.ncoins || game->i.exit != tmp.nexit)
 	{
 		free_map(&game->plot);
 		free_map(&tmp);

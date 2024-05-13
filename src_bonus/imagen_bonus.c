@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:03:18 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/13 10:19:18 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:52:30 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,9 @@
 void	init_window(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
-	if ((game->plot.length * SPRITE_SIZE) >= 1920 \
-		|| (game->plot.height * SPRITE_SIZE) >= 720)
-	{
-		free_map(&game->plot);
-		free(game->mlx_ptr);
-		game_over("Map size larger than display resolution", game, error);
-	}
-	else
-	{
-		game->window_ptr = mlx_new_window(game->mlx_ptr, \
-			(game->plot.length * SPRITE_SIZE), \
-			(game->plot.height * SPRITE_SIZE), "so_long_bonus");
-	}
+	game->window_ptr = mlx_new_window(game->mlx_ptr, \
+		(game->plot.length * SPRITE_SIZE), \
+		(game->plot.height * SPRITE_SIZE), "so_long_bonus");
 }
 
 void	init_images(t_game *game)
