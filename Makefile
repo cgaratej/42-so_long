@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:32:58 by cgaratej          #+#    #+#              #
-#    Updated: 2024/05/09 16:27:04 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/05/13 10:20:02 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MINILIBX_MAKE =  make --no-print-directory -C utils/minilibx
 NAME = so_long
 CFLAGS = -Wall -Werror -Wextra
 MLXFLAGS = -lmlx -framework OpenGL -framework AppKit -L./utils/minilibx
-INCLUDE = Makefile
+INCLUDE = Makefile includes/*
 CC = gcc
 RM = rm -f
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 void	check_num_elemts_valids(t_game *game, t_counter *cn, char *tmp)
 {

@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:12:00 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 13:03:01 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:18:16 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long.h"
+#include "../../includes/so_long.h"
 
 static void	map_set_img(t_game *game, int y, int x);
 static void	map_check_one(t_game *game, int y, int x);

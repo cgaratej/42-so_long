@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:42:56 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 13:55:47 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:18:49 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 void				flood_fill(t_draw *map, int x, int y);
 static void			read_map(t_game *game, int fd);

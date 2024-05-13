@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:16:22 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 18:10:42 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:19:08 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 int	key_check(int keycode, t_game *game)
 {

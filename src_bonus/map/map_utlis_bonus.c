@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 12:07:25 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/08 15:30:05 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:19:00 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 int	open_file(char *path)
 {

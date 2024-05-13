@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:47:16 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/09 16:22:44 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:19:05 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 int	check_valid_mov(t_game *game, int y, int x);
 

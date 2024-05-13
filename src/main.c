@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:37:28 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/02 15:29:04 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:18:41 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "../includes/so_long.h"
 
 static void	init_game(t_game *game, char *path);
 static int	is_ber_file(const char *argv);

@@ -6,11 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:14:32 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/05/09 16:12:55 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:19:10 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 void	anim_left(t_game *game, int y, int x)
 {
